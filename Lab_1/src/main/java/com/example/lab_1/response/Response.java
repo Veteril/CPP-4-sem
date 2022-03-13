@@ -7,16 +7,8 @@ public class Response {
     @Setter
     @Getter
     private String message;
-    @Getter
-    @Setter
-    private double volume;
 
     public Response() {}
-
-    public Response(double volume, String message) {
-        this.volume = volume;
-        this.message = message;
-    }
 
     public Response(String message) {
         this.message = message;

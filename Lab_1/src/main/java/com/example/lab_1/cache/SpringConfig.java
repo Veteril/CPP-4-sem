@@ -1,6 +1,6 @@
-package com.example.lab_1;
+package com.example.lab_1.cache;
 
-import com.example.lab_1.cache.Cache;
+import com.example.lab_1.cache.ProgramCache;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -10,8 +10,8 @@ public class SpringConfig {
 
     @Bean("cache")
     @Scope(value = "singleton")
-    Cache cache() {
-        return new Cache();
+    ProgramCache cache() {
+        return new ProgramCache();
     }
 
 }

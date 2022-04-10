@@ -13,8 +13,8 @@ class Lab1ApplicationTests {
     private final CalculationController control = new CalculationController();
     @Test
     void test() throws BadRequestException {
-        double result = control.calculate(5, 2);
-        double expected = 20.933333333333334;
+        var result = control.calculate(5, 2);
+        var expected = 20.933333333333334;
         assertEquals(expected, result);
     }
 }

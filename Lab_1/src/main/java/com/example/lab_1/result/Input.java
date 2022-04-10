@@ -6,6 +6,30 @@ import java.util.Objects;
 
 public class Input {
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this)
+            return true;
+
+        if (obj == null || obj.getClass() != this.getClass())
+            return false;
+
+        Input params = (Input) obj;
+
+        return  Objects.equals(firstValue,  params.firstValue)  &&
+                Objects.equals(secondValue, params.secondValue);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstValue, secondValue);
+    }
+
+    private @Nullable Integer firstValue;
+
+    private @Nullable Integer secondValue;
+
+
     private @Nullable Double height;
 
     private @Nullable Double radius;

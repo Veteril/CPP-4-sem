@@ -13,9 +13,11 @@ import com.example.lab_1.cache.ProgramCache;
 @RestController
 public class CalculationController {
     CalculateData data = new CalculateData();
+    Counter counter = new Counter();
     @GetMapping(value = "/volume")
     public ResponseEntity<Object> calculate (@RequestParam(value = "h", defaultValue = "0") double h,
                                              @RequestParam(value = "r", defaultValue = "0") double r) throws  BadRequestException {
+        counter.increaseCounter();
         if (r < 0 && h < 0)
             throw new BadRequestException("ERROR 400, BAD REQUEST, invalid h and r values...");
         if (r < 0)

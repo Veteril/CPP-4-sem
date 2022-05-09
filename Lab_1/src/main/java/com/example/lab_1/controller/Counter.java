@@ -1,6 +1,6 @@
 package com.example.lab_1.controller;
 
-import com.example.lab_1.logger.MyLogger;
+import com.example.lab_1.result.logger.MyLogger;
 import org.apache.logging.log4j.Level;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Counter {
 
     static int counter = 0;
-
-    Counter() {}
 
     synchronized public void increaseCounter() {
         counter++;
@@ -22,5 +20,8 @@ public class Counter {
         return "Number of calls: "+counter;
     }
 
+    synchronized  public Integer retInt() {
+        return counter;
+    }
 
 }

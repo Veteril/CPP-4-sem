@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Level;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import com.example.lab_1.logger.MyLogger;
+import com.example.lab_1.result.logger.MyLogger;
 
 import java.util.HashMap;
 import java.util.Map;

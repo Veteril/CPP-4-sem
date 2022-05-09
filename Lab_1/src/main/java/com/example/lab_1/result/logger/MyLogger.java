@@ -1,4 +1,4 @@
-package com.example.lab_1.logger;
+package com.example.lab_1.result.logger;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;

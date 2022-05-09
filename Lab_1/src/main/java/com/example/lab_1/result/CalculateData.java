@@ -2,10 +2,14 @@ package com.example.lab_1.result;
 
 import com.example.lab_1.cache.SpringConfig;
 import com.example.lab_1.cache.ProgramCache;
-import com.example.lab_1.logger.MyLogger;
+import com.example.lab_1.result.logger.MyLogger;
 import org.apache.logging.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.OptionalDouble;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class CalculateData {
 
@@ -45,4 +49,15 @@ public class CalculateData {
     public void setInfo(@Nullable Double root) {
         this.root = root;
     }
+    /*public OptionalDouble averageOfPositive(String[] arr){
+        IntStream stream = Stream.of(arr).mapToInt(Integer::parseInt);
+        return stream.filter(x->x>0).average();
+    }*/
+
+    public static int[] FilterData (String[] arr){
+        MyLogger.log(Level.INFO, "Filtering");
+        IntStream stream = Stream.of(arr).mapToInt(Integer::parseInt);
+        return stream.filter(i -> i < 100).toArray();
+    }
+
 }

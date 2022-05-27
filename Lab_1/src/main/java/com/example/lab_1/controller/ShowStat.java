@@ -12,18 +12,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/stats")
-public class ShowStat {
-    private final Provide statsProvider;
+//@RequestMapping("/stats")
+class ShowStat {
 
-    @Autowired
-    public ShowStat(Provide statsProvider) {
-        this.statsProvider = statsProvider;
+    public final Provide statsProvider = new Provide();
+    public ShowStat() {
+
     }
 
-    @GetMapping
+
+    @GetMapping("/stats")
     public ResponseEntity<Stat>receiveStat() {
-        statsProvider.calculate();
+        statsProvider.calculate(statsProvider.totalReq,statsProvider.wrongReq);
         return new ResponseEntity<>(statsProvider.getStats(), HttpStatus.OK);
     }
 }
+

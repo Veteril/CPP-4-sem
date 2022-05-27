@@ -29,18 +29,14 @@ public class CalculateData {
         this.input = params;
     }
 
-    public void checkOrCalculate() {
+    public Integer checkOrCalculate() {
 
         Double temp = programCache.find(input);
-        if (temp != null) {
-            MyLogger.log(Level.WARN, "Value found in cache!");
-            setInfo(temp);
-            return;
-        }
-
         temp = input.getRadius() * input.getRadius()  * input.getHeight() * 3.14;
         setInfo(temp);
         programCache.add(input, root);
+        int value = temp.intValue();
+        return value;
     }
 
     public Double getInfo() {
@@ -49,10 +45,7 @@ public class CalculateData {
     public void setInfo(@Nullable Double root) {
         this.root = root;
     }
-    /*public OptionalDouble averageOfPositive(String[] arr){
-        IntStream stream = Stream.of(arr).mapToInt(Integer::parseInt);
-        return stream.filter(x->x>0).average();
-    }*/
+
 
     public static int[] FilterData (String[] arr){
         MyLogger.log(Level.INFO, "Filtering");
